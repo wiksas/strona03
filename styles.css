@@ -1,3 +1,24 @@
+/* Czcionki hostowane lokalnie, przycięte do łaciny z polskimi literami (Latin Ext-A).
+   Titan One zamiast Lilita One: Lilita nie ma ą, ć, ę, ń, ś, ź, ż. */
+@font-face {
+  font-family: "Titan One";
+  src: url("assets/fonts/titan-one.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("assets/fonts/nunito.woff2") format("woff2");
+  font-weight: 500 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Caveat";
+  src: url("assets/fonts/caveat-600.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
 /* Palette = przekrój tiramisu: kakao, mascarpone, biszkopt. Jedyny akcent to czerwień pieczątki. */
 :root {
   --cocoa: #3b2416;
@@ -15,7 +36,7 @@
   --r-md: 14px;
   --r-lg: 22px;
 
-  --font-display: "Lilita One", "Arial Black", sans-serif;
+  --font-display: "Titan One", "Arial Black", sans-serif;
   --font-body: "Nunito", "Segoe UI", sans-serif;
   --font-hand: "Caveat", "Segoe Script", cursive;
 }
