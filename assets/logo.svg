@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Tyraj Misiu">
+  <defs>
+    <clipPath id="tm-head"><circle cx="60" cy="66" r="42"/></clipPath>
+  </defs>
+  <g fill="#fffaf0" stroke="#fffaf0" stroke-width="14" stroke-linejoin="round">
+    <circle cx="27" cy="33" r="15"/>
+    <circle cx="93" cy="33" r="15"/>
+    <circle cx="60" cy="66" r="42"/>
+  </g>
+  <g stroke="#3b2416" stroke-width="5">
+    <circle cx="27" cy="33" r="15" fill="#6f4428"/>
+    <circle cx="93" cy="33" r="15" fill="#6f4428"/>
+  </g>
+  <circle cx="27" cy="33" r="6.5" fill="#efc27f"/>
+  <circle cx="93" cy="33" r="6.5" fill="#efc27f"/>
+  <g clip-path="url(#tm-head)">
+    <rect x="0" y="20" width="120" height="27" fill="#6f4428"/>
+    <rect x="0" y="47" width="120" height="16" fill="#fff4dc"/>
+    <rect x="0" y="63" width="120" height="12" fill="#efc27f"/>
+    <rect x="0" y="75" width="120" height="13" fill="#fff4dc"/>
+    <rect x="0" y="88" width="120" height="24" fill="#efc27f"/>
+    <g fill="#8d5a36">
+      <circle cx="40" cy="34" r="2"/><circle cx="52" cy="29" r="1.6"/><circle cx="66" cy="33" r="2.2"/>
+      <circle cx="79" cy="28" r="1.6"/><circle cx="86" cy="39" r="1.8"/><circle cx="31" cy="42" r="1.6"/>
+      <circle cx="58" cy="41" r="1.4"/>
+    </g>
+    <path d="M18 47h84M18 63h84M18 75h84M18 88h84" stroke="#3b2416" stroke-width="1.5" opacity=".35"/>
+  </g>
+  <circle cx="60" cy="66" r="42" fill="none" stroke="#3b2416" stroke-width="5"/>
+  <circle cx="45" cy="55" r="4.6" fill="#3b2416"/>
+  <circle cx="75" cy="55" r="4.6" fill="#3b2416"/>
+  <circle cx="46.5" cy="53.5" r="1.4" fill="#fffaf0"/>
+  <circle cx="76.5" cy="53.5" r="1.4" fill="#fffaf0"/>
+  <ellipse cx="60" cy="78" rx="15" ry="11" fill="#fffaf0" stroke="#3b2416" stroke-width="4"/>
+  <ellipse cx="60" cy="73.5" rx="6" ry="4.4" fill="#3b2416"/>
+  <path d="M60 77.5v3.5M54 81.5q6 5 12 0" fill="none" stroke="#3b2416" stroke-width="3" stroke-linecap="round"/>
+</svg>

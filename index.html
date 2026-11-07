@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Certyfikat robienia tiramisu | Tyraj Misiu</title>
+  <meta name="description" content="Wystaw sobie certyfikat robienia tiramisu firmy Tyraj Misiu. Zatwierdza Wiksas.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Lilita+One&family=Nunito:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#wystaw">Przejdź do formularza</a>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Tyraj Misiu, początek strony">
+      <img src="assets/logo.svg" width="56" height="56" alt="">
+      <span class="brand__name">Tyraj Misiu</span>
+    </a>
+    <p class="topbar__note">Certyfikaty zatwierdza osobiście Wiksas</p>
+  </header>
+  <div class="layers" aria-hidden="true"></div>
+
+  <main id="top">
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro__text">
+        <h1 id="intro-title">Tiramisu zrobione? Odbierz papier od Tyraj Misiu.</h1>
+        <p>Zaznacz kroki, które masz za sobą, wpisz imię i daj Wiksasowi do zatwierdzenia. Gotowy certyfikat wydrukujesz albo zapiszesz jako PDF.</p>
+      </div>
+      <img class="intro__slice" src="assets/slice.svg" width="230" height="185" alt="Rysunek kawałka tiramisu z łyżeczką" fetchpriority="high">
+    </section>
+
+    <div class="workspace">
+      <section class="panel" id="wystaw" aria-labelledby="form-title">
+        <h2 id="form-title">Wystaw certyfikat</h2>
+        <noscript><p class="form-error">Formularz potrzebuje JavaScriptu, żeby Wiksas mógł podpisać.</p></noscript>
+        <form id="cert-form" novalidate>
+          <div class="field">
+            <label for="name">Imię na certyfikacie</label>
+            <input id="name" name="name" type="text" autocomplete="name" maxlength="40" placeholder="Twoje imię" aria-describedby="name-error">
+            <p class="field__error" id="name-error" hidden>Wpisz imię. Wiksas nie podpisuje anonimów.</p>
+          </div>
+
+          <fieldset>
+            <legend>Stopień</legend>
+            <label class="choice"><input type="radio" name="level" value="Pomocnik od biszkoptów"> Pomocnik od biszkoptów</label>
+            <label class="choice"><input type="radio" name="level" value="Czeladnik mascarpone" checked> Czeladnik mascarpone</label>
+            <label class="choice"><input type="radio" name="level" value="Mistrz kakaowego pyłu"> Mistrz kakaowego pyłu</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Co masz za sobą? Wiksas sprawdza każdy krok.</legend>
+            <label class="choice choice--step"><input type="checkbox" name="step" data-short="żółtka z cukrem"> Żółtka utarte z cukrem na jasny krem</label>
+            <label class="choice choice--step"><input type="checkbox" name="step" data-short="mascarpone bez grudek"> Mascarpone wmieszane bez grudek</label>
+            <label class="choice choice--step"><input type="checkbox" name="step" data-short="biszkopty w espresso"> Biszkopty tylko zanurzone w espresso, nie utopione</label>
+            <label class="choice choice--step"><input type="checkbox" name="step" data-short="dwie warstwy"> Co najmniej dwie warstwy biszkoptów i kremu</label>
+            <label class="choice choice--step"><input type="checkbox" name="step" data-short="kakao przez sitko"> Kakao przesiane przez sitko na wierzch</label>
+            <label class="choice choice--step"><input type="checkbox" name="step" data-short="kilka godzin w lodówce"> Kilka godzin w lodówce przed krojeniem</label>
+          </fieldset>
+
+          <div class="form-error" id="form-error" role="alert" hidden></div>
+
+          <button class="btn btn--stamp" id="submit" type="submit">Daj Wiksasowi do zatwierdzenia</button>
+        </form>
+      </section>
+
+      <section class="cert-area" aria-labelledby="cert-title">
+        <article class="cert" id="certyfikat" data-state="draft">
+          <div class="cert__layers" aria-hidden="true"></div>
+          <header class="cert__head">
+            <img src="assets/logo.svg" width="76" height="76" alt="Logo Tyraj Misiu">
+            <p class="cert__issuer">Tyraj Misiu</p>
+          </header>
+
+          <h2 class="cert__title" id="cert-title">Certyfikat robienia tiramisu</h2>
+          <p class="cert__lead">Firma Tyraj Misiu zaświadcza, że</p>
+          <p class="cert__name" id="cert-name" data-empty>Twoje imię</p>
+          <p class="cert__lead">ma za sobą tiramisu zrobione zgodnie z przepisem firmy i otrzymuje stopień</p>
+          <p class="cert__level" id="cert-level">Czeladnik mascarpone</p>
+
+          <footer class="cert__foot">
+            <dl class="cert__meta">
+              <div><dt>Data wystawienia</dt><dd id="cert-date">po zatwierdzeniu</dd></div>
+              <div><dt>Numer</dt><dd id="cert-no">po zatwierdzeniu</dd></div>
+            </dl>
+            <div class="cert__sign">
+              <span class="cert__signature" aria-hidden="true">Wiksas</span>
+              <span class="cert__signline">Zatwierdził: Wiksas</span>
+            </div>
+            <div class="cert__stamp">
+              <p class="stamp__placeholder" id="stamp-placeholder">miejsce na pieczątkę Wiksasa</p>
+              <svg class="stamp__svg" viewBox="0 0 200 200" width="140" height="140" role="img" aria-label="Pieczątka: zatwierdzone przez Wiksasa">
+                <defs>
+                  <path id="stamp-ring" d="M100,100 m-73,0 a73,73 0 1,1 146,0 a73,73 0 1,1 -146,0"/>
+                  <filter id="stamp-ink" x="-5%" y="-5%" width="110%" height="110%">
+                    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" result="noise"/>
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="3"/>
+                  </filter>
+                </defs>
+                <g filter="url(#stamp-ink)">
+                  <circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" stroke-width="6"/>
+                  <circle cx="100" cy="100" r="55" fill="none" stroke="currentColor" stroke-width="3"/>
+                  <text class="stamp__text" fill="currentColor"><textPath href="#stamp-ring" textLength="446" lengthAdjust="spacing">ZATWIERDZONE PRZEZ WIKSASA • TYRAJ MISIU •</textPath></text>
+                  <g fill="currentColor">
+                    <ellipse cx="100" cy="114" rx="21" ry="17"/>
+                    <circle cx="76" cy="92" r="7.5"/>
+                    <circle cx="91" cy="80" r="7.5"/>
+                    <circle cx="109" cy="80" r="7.5"/>
+                    <circle cx="124" cy="92" r="7.5"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </footer>
+        </article>
+
+        <p class="status" id="status" role="status">Certyfikat czeka na zatwierdzenie Wiksasa.</p>
+
+        <div class="actions">
+          <button class="btn" id="print" type="button" disabled>Wydrukuj albo zapisz PDF</button>
+          <button class="btn btn--plain" id="reset" type="button">Wyczyść i zacznij od nowa</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="layers" aria-hidden="true"></div>
+    <p>Tyraj Misiu. Każdy certyfikat zatwierdza Wiksas. Strona jest do zabawy, to nie jest dokument urzędowy.</p>
+  </footer>
+</body>
+</html>
